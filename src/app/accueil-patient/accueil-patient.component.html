@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page d'accueil du patient</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #337ab7;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+      background-color: #337ab7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #23527c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Page d'accueil du patient</h1>
+    <ul>
+        <li><a (click)="effectuerPaiement()">Effectuer un paiement</a></li>
+        <li><a (click)="consulterDossierMedical()">Consulter le dossier médical</a></li>
+        <li><a (click)="consulterInformations()">Consulter les informations</a></li>
+      
+    </ul>
+  </div>
+</body>
+</html>
