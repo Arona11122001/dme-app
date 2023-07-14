@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,8 +8,8 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 import { SecretaireComponent } from './secretaire/secretaire.component';
 import { GestionnaireComponent } from './gestionnaire/gestionnaire.component';
-import { AdminComponent } from './admin/admin.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostModule } from './admin/post/post.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,16 @@ import { AccueilComponent } from './accueil/accueil.component';
     PatientComponent,
     SecretaireComponent,
     GestionnaireComponent,
-    AdminComponent,
-    AccueilComponent
   ],
   imports: [
-    BrowserModule, 
-    AppRoutingModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot([]),
+    PostModule,
+    HttpClientModule
+  ],
+  exports: [
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
