@@ -1,0 +1,56 @@
+span{
+    color: blueviolet;
+    font-weight: bold;
+}
+h1{
+    font-size: 2rem;
+}
+.card{
+    height:100px;
+    width: 160px;
+    /* padding-left: 3px 8px; */
+    background-color: rgb(179, 227, 238);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.stat{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 5px;
+}
+.stat h1{
+    margin-right: 8px;
+}
+.cards{
+    display: flex;
+    justify-content: flex-start;
+}
+.cards div{
+    margin-right: 2rem;
+}
+.daystat-container{
+    background-color: red ;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius:12px ;
+    box-shadow:2px 5px rgb(229, 227, 227) ;
+    background: linear-gradient(0.25turn, #b9dcea, #5362ce, #0e0698);
+}
+
+
+mat-card mat-card-content{
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 16px;
+
+}
+/* mat-card mat-card-content mat-card{
+    background-color: #fff;
+} */
+
+mat-card{
+    width: 100%;
+}

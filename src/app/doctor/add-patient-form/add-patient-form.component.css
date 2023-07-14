@@ -1,0 +1,19 @@
+form{   
+    padding: 16px 0px;
+}
+mat-form-field{
+    width: 100%;
+}
+mat-card{
+    width: 50%;
+    justify-self: center;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:60px;
+}
+mat-card-actions button{
+    margin-left: 12px;
+}

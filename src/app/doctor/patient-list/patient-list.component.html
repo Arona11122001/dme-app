@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Liste des Patients</mat-card-title>
+        <mat-card-subtitle>
+            Cliquer sur un patient pour consulter son dossier medical
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <mat-nav-list>
+
+            <mat-list-item *ngFor="let patient of listePatient">
+                <mat-icon matListItemAvatar color="primary" *ngIf="patient.id < 7">
+                    person
+                </mat-icon>
+                <h3 matListItemLine *ngIf="patient.id < 7">{{patient.firstName}}</h3>
+                <p matListItemLine *ngIf="patient.id < 7">visited</p>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary" routerLink="/nouveau-patient">
+            <mat-icon>add</mat-icon>
+            nouveau patient
+        </button>
+        <button mat-raised-button color="primary" routerLink="/all-patients">Tout les patients </button>
+    </mat-card-actions>
+</mat-card>

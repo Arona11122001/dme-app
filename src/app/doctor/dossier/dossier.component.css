@@ -1,0 +1,26 @@
+nav  mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-title{
+  font-size: 24px;
+  color: darkcyan;
+}
+
+.profile {
+  background-image: url('../data/avatar2.png');
+  background-size: cover;
+}
+
+mat-card-header span{
+  font-size: 18px;
+  font-weight: bold;
+}
+section mat-card-header{
+  display: flex;
+  flex-direction: column;
+}
+.module-icon{
+  background-image: url("../data/avatar3.png");
+  background-size: cover;
+}

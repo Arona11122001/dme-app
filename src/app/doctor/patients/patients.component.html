@@ -1,0 +1,45 @@
+<nav>
+  <mat-toolbar>
+    <div>
+      <button mat-button routerLink="/doctor">Retour</button>
+
+      <span>Patients</span>
+    </div>
+
+    <div class="search">
+      <input placeholder="search ..." [(ngModel)]="keyword"/>
+      <button mat-raised-button color="primary" (click)="searchPatients()">search</button>
+    </div>
+  </mat-toolbar>
+</nav>
+
+<div class="container">
+  <mat-card *ngFor="let patient of patients">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image" *ngIf="patient.sexe!='masculin'"></div>
+      <div mat-card-avatar class="example-header-image2" *ngIf="patient.sexe=='masculin'"></div>
+      <mat-card-title>{{patient.firstName}}</mat-card-title>
+      <mat-card-subtitle>{{patient.lastName}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <span>Derniere consultation</span>
+        <span>{{patient.createdDate}}</span>
+      </div>
+      <div>
+        <span>Prochaine consultation</span>
+        <span>{{patient.createdDate}}</span>
+      </div>
+      <div>
+        <span>Telephone</span>
+        <span>{{patient.mail}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="primary" routerLink="/dossier-medical">Dossier</button>
+      <button mat-button color="warn" (click)="deletePatient(patient)">Supprimer</button>
+    </mat-card-actions>
+  </mat-card>
+  <span *ngIf="!patients">chargement ...</span>
+  <span *ngIf="patients.length==0">Liste vide</span>
+</div>
