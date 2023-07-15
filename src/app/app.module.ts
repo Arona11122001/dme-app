@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +16,6 @@ import { PaymentComponent } from './payment/payment.component';
 import { InformationComponent } from './information/information.component';
 import { AccueilPatientComponent } from './accueil-patient/accueil-patient.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,17 +29,14 @@ import { AccueilPatientComponent } from './accueil-patient/accueil-patient.compo
     PaymentComponent,
     InformationComponent,
     AccueilPatientComponent,
-
-    
   ],
-
   imports: [
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
-    FormsModule
+    RouterModule.forRoot([]),
+    FormsModule,
   ],
-  
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

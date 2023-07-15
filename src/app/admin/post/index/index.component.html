@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tableau des Utilisateurs</title>
+  <style>
+    /* Add your custom CSS styles here */
+    * {
+      box-sizing: border-box;
+    }
+    head
+    {
+      background-color: blue;
+    }
+    
+    .crud {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+
+    .crud a, .crud button {
+      margin-right: 10px;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image:url(../../../../assets/green1.png);
+    }
+    
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    
+    .sidebar {
+      width: 300px;
+      background-image: url('../../../../assets/blue2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px;
+      margin: 10px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+      font-size: 30px;
+      position: relative;
+      top: 10%;
+    }
+    
+    .sidebar a img {
+      margin: 20px;
+      height: 40px;
+    }
+    
+    .header-input {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 200px;
+      text-align: center;
+      position: relative;
+      left: 40%;
+      
+    }
+    
+    .header-input input {
+      border: none;
+      width: 100%;
+      margin-left: 10px;
+      background-image: url(../../../../assets/green1.png);
+    }
+    
+    .nav-bar {
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-bar img {
+      margin: 5px;
+      height: 20px;
+    }
+    
+    .nav-bar span {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    
+    .content {
+      flex: 1;
+      padding: 20px;
+      margin-left: 300px;
+    }
+    
+    header {
+      background-image: url('../../../../assets/blanc1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+      padding: 30px;
+      margin-bottom: 20px;
+      width: 100%;
+      position: relative;
+      right: 2%;
+      bottom: 1% ;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+    
+    header .header-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .btn-create {
+      background-color: #28a745;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      position: relative;
+      left: 70%;
+    }
+    
+    .btn-view {
+      background-color: yellow;
+      color: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 1px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    
+    .btn-edit {
+      background-color: blue;
+      color: #fff;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    
+    .btn-danger  {
+      background-color: red;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 10px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 30px;
+      border-radius: 5px;
+    }
+    
+    table.table-striped {
+      border-collapse: collapse;
+      margin: 0 auto;
+      width: 90%;
+      font-size: 30px;
+    }
+    
+    table.table-striped th,
+    table.table-striped td {
+      border: 1px solid #000;
+      text-align: center;
+      padding: 10px;
+    }
+    
+    table.table-striped th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    
+    table.table-striped tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    /* Responsive Sidebar Menu CSS */
+    @media screen and (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+    
+      .sidebar {
+        width: 100%;
+        position: static;
+        margin-bottom: 20px;
+      }
+    
+      .content {
+        flex: 1;
+        padding: 20px;
+        margin-left: 0;
+      }
+    }
+    
+    /* Hamburger Menu CSS */
+    .menu-toggle {
+      display: none;
+    }
+    
+    .menu-toggle:checked ~ .sidebar {
+      width: 250px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .menu-toggle:checked ~ .sidebar {
+        width: 100%;
+      }
+    
+      .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 100;
+        overflow-y: auto;
+        transition: 0.5s;
+      }
+    
+      .sidebar a {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    
+      .sidebar a img {
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <div class="wrapper">
+    <nav class="sidebar">
+      <a href="#">
+        <img src="../../../../assets/acceuil.png" alt="Accueil" />
+        Dashboard
+      </a>
+
+      <a href="#">
+        <img src="../../../../assets/acceuil.png" alt="Accueil" />
+        Accueil
+      </a>
+      
+      <a href="#">
+        <img src="../../../../assets/medecin.png" alt="Médecins" />
+        Médecins
+      </a>
+      <a href="#">
+        <img src="../../../../assets/patient.png" alt="Patients" />
+        Patients
+      </a>
+      <a href="#">
+        <img src="../../../../assets/secretaire.png" alt="Secrétaires" />
+        Secrétaires
+      </a>
+      <a href="#">
+        <img src="../../../../assets/acceuil.png" alt="Gestionnaires" />
+        Gestionnaires
+      </a>
+    </nav>
+
+    <label for="menu-toggle">&#9776;</label>
+
+    <div class="content">
+      <header>
+        <div class="header-input">
+          <input type="text" placeholder="Rechercher" class="input" />
+          <img src="../../../../assets/recherche.png" alt="Image" style="height: 30px; border-radius: 50%; width: 20px;">
+        </div>
+       
+        <h2>Dashboard</h2>
+      </header>
+
+      <div class="container">
+        <h1>Tableau des Utilisateurs</h1>
+
+        <a href="#" routerLink="/post/create/" class="btn-create">Ajouter User</a>
+
+        
+        <h2>Médecins</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identifiant</th>
+              <th>Mot de Passe</th>
+              <th width="400px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let post of posts; let i = index">
+              <tr *ngIf="post.typeUser === 'medecin'" [ngClass]="{ 'even-row': i % 2 === 0 }">
+                <td>{{ post.id }}</td>
+                <td>{{ post.identifiant }}</td>
+                <td>{{ post.motDePasse }}</td>
+                <td class="crud">
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info btn-view">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info btn-edit">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+              
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+
+        <h2>Patients</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identifiant</th>
+              <th>Mot de Passe</th>
+              <th width="400px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let post of posts; let i = index">
+              <tr *ngIf="post.typeUser === 'patient'" [ngClass]="{ 'even-row': i % 2 === 0 }">
+                <td>{{ post.id }}</td>
+                <td>{{ post.identifiant }}</td>
+                <td>{{ post.motDePasse }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info btn-view">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info btn-edit">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+
+        <h2>Secretaires</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identifiant</th>
+              <th>Mot de Passe</th>
+              <th width="400px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let post of posts; let i = index">
+              <tr *ngIf="post.typeUser === 'secretaire'" [ngClass]="{ 'even-row': i % 2 === 0 }">
+                <td>{{ post.id }}</td>
+                <td>{{ post.identifiant }}</td>
+                <td>{{ post.motDePasse }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info btn-view">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info btn-edit">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+
+        <h2>Gestionnaires</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identifiant</th>
+              <th>Mot de Passe</th>
+              <th width="400px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let post of posts; let i = index">
+              <tr *ngIf="post.typeUser === 'gestionnaire'" [ngClass]="{ 'even-row': i % 2 === 0 }">
+                <td>{{ post.id }}</td>
+                <td>{{ post.identifiant }}</td>
+                <td>{{ post.motDePasse }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info btn-view">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info btn-edit">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    // JavaScript code for handling the menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    menuToggle.addEventListener('change', () => {
+      document.body.classList.toggle('menu-open');
+    });
+  </script>
+</body>
+</html>

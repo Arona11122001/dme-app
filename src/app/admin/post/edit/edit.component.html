@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Update Post</h1>
+   
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+    
+        <div class="form-group">
+            <label for="identifiant">identifiant:</label>
+            <input 
+                formControlName="identifiant"
+                id="identifiant" 
+                type="text" 
+                [(ngModel)]="post.identifiant"
+                class="form-control">
+            <div *ngIf="f['identifiant'].touched && f['identifiant'].invalid" class="alert alert-danger">
+                <div *ngIf="f['identifiant'].errors && f['identifiant'].errors['required']">identifiant is required.</div>
+            </div>
+        </div>
+           
+        <div class="form-group">
+            <label for="motDePasse">Mot de passe</label>
+            <input 
+                formControlName="motDePasse"
+                id="motDePasse" 
+                type="password" 
+                [(ngModel)]="post.motDePasse"
+                class="form-control">
+            <div *ngIf="f['motDePasse'].touched && f['motDePasse'].invalid" class="alert alert-danger">
+                <div *ngIf="f['motDePasse'].errors && f['motDePasse'].errors['required']">Mot de passe is required.</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="typeUser">Type d'utilisateur</label>
+            <select formControlName="typeUser" id="typeUser" class="form-control">
+                <option value="medecin">Médecin</option>
+                <option value="patient">Patient</option>
+                <option value="gestionnaire">Gestionnaire</option>
+                <option value="secretaire">Secrétaire</option>
+            </select>
+        </div>
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
