@@ -7,6 +7,10 @@ import { SecretaireComponent } from './secretaire/secretaire.component';
 import { GestionnaireComponent } from './gestionnaire/gestionnaire.component';
 import { AdminComponent } from './admin/admin.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { PaymentComponent } from './payment/payment.component';
+import { MedicalRecordComponent } from './medical-record/medical-record.component';
+import { InformationComponent } from './information/information.component';
+import { AccueilPatientComponent } from './accueil-patient/accueil-patient.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
@@ -15,7 +19,13 @@ const routes: Routes = [
   {path:'doctor', component:DoctorComponent},
   {path:'secretaire', component:SecretaireComponent},
   {path:'gestionnaire', component:GestionnaireComponent},
-  {path:'admin', component:AdminComponent}
+  {path:'admin', component:AdminComponent},
+  { path: 'patient/payment', component: PaymentComponent },
+  { path: 'patient/medical-record', component: MedicalRecordComponent },
+  { path: 'patient/information', component: InformationComponent },
+  { path: 'accueil-patient', component: AccueilPatientComponent }
+
+  
 ];
  
 @NgModule({
