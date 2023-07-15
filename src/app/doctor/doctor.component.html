@@ -1,1 +1,16 @@
-<h1 class="text-2xl">hello from doctor</h1>
+<app-navbar></app-navbar>
+<mat-grid-list cols="2" rowHeight="330px">
+
+    
+    <mat-grid-tile>
+        <!-- <app-daystat></app-daystat> -->
+        <app-patient-list [patientList]="patients" ></app-patient-list>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="2">
+       <app-calendar></app-calendar>
+    </mat-grid-tile>
+    <mat-grid-tile>
+         <!-- <app-patient-list></app-patient-list> -->
+         <app-daystat></app-daystat>
+    </mat-grid-tile>
+</mat-grid-list>

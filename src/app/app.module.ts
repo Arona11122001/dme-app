@@ -15,6 +15,18 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
 import { PaymentComponent } from './payment/payment.component';
 import { InformationComponent } from './information/information.component';
 import { AccueilPatientComponent } from './accueil-patient/accueil-patient.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './doctor/material/material.module';
+import { NavbarComponent } from './doctor/navbar/navbar.component';
+import { DaystatComponent } from './doctor/daystat/daystat.component';
+import { CalendarComponent } from './doctor/calendar/calendar.component';
+import { PatientListComponent } from './doctor/patient-list/patient-list.component';
+import { AddPatientFormComponent } from './doctor/add-patient-form/add-patient-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PatientsComponent } from './doctor/patients/patients.component';
+import { DataService } from './doctor/DataService';
+import { DossierComponent } from './doctor/dossier/dossier.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +41,24 @@ import { AccueilPatientComponent } from './accueil-patient/accueil-patient.compo
     PaymentComponent,
     InformationComponent,
     AccueilPatientComponent,
+    NavbarComponent,
+    DaystatComponent,
+    CalendarComponent,
+    PatientListComponent,
+    AddPatientFormComponent,
+    PatientsComponent,
+    DossierComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([]),
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [DataService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

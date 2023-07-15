@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 0;
+}
+app-daystat {
+  width: 100%;
+}
+app-patient-list{
+}
+mat-grid-list{
+  background-color: #b9dcea;
+}

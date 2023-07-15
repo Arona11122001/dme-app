@@ -11,15 +11,21 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
 import { InformationComponent } from './information/information.component';
 import { AccueilPatientComponent } from './accueil-patient/accueil-patient.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddPatientFormComponent } from './doctor/add-patient-form/add-patient-form.component';
+import { PatientsComponent } from "./doctor/patients/patients.component";
+import { DossierComponent } from "./doctor/dossier/dossier.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/post', pathMatch: 'full' },
+  { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
   { path: 'acceuil', component: AccueilComponent },
   { path: 'patient', component: PatientComponent },
   { path: 'doctor', component: DoctorComponent },
+  { path: 'nouveau-patient', component: AddPatientFormComponent },
   { path: 'secretaire', component: SecretaireComponent },
   { path: 'gestionnaire', component: GestionnaireComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'all-patients', component: PatientsComponent },
+  { path: 'dossier-medical', component: DossierComponent },
   { path: 'patient/payment', component: PaymentComponent },
   { path: 'patient/medical-record', component: MedicalRecordComponent },
   { path: 'patient/information', component: InformationComponent },
@@ -28,6 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

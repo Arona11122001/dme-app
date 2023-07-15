@@ -1,0 +1,30 @@
+mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+.right-nav{
+    display: flex;
+    align-items: center;
+}
+.right-nav button{
+    margin-right: 3rem;
+}
+.left-nav input{
+    padding: 16px;
+    width: 600px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f4f1f1;
+    margin-right: 5px;
+}
+.left-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.left-nav mat-icon{
+    margin-right: 5px;
+}
+mat-toolbar{
+    background-color: #fff;
+}

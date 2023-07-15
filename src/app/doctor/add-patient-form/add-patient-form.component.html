@@ -1,0 +1,82 @@
+<div class="form-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Nouveau Patient
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <form [formGroup]="newPatient">
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="lastName"/>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Prenom</mat-label>
+                    <input matInput formControlName="firstName"/>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Date de naissance</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Telephone</mat-label>
+                    <span matPrefix>+221 </span>
+                    <input type="tel" matInput placeholder="786078871" formControlName="telephone">
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="mail" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+
+                <mat-accordion multi>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Antecedents medicaux
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <section>
+                            <mat-checkbox>Diabete</mat-checkbox>
+                            <mat-checkbox>Hypertension</mat-checkbox>
+                            <mat-checkbox>Allergie</mat-checkbox>
+                            <mat-checkbox>Asthme</mat-checkbox>
+                            <mat-checkbox>Maladies pulmonaires chroniques</mat-checkbox>
+                            <mat-checkbox>Hypercholestérolémie</mat-checkbox>
+                        </section>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()"
+                    [disabled]="newPatient.invalid">submit
+            </button>
+            <button mat-raised-button (click)="onBack()">
+                back
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<!--<div *ngIf="patient$ | async as patient">-->
+<!--    <mat-card>-->
+<!--        <mat-card-header>-->
+<!--            <mat-card-title>{{patient.firstName}}</mat-card-title>-->
+<!--            <mat-card-subtitle>{{patient.createdDate}}</mat-card-subtitle>-->
+<!--        </mat-card-header>-->
+<!--    </mat-card>-->
+<!--</div>-->
+
+
