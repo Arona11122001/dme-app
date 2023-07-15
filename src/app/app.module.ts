@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,18 +18,35 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
 import { PaymentComponent } from './payment/payment.component';
 import { InformationComponent } from './information/information.component';
 import { AccueilPatientComponent } from './accueil-patient/accueil-patient.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './doctor/material/material.module';
 import { NavbarComponent } from './doctor/navbar/navbar.component';
-import { DaystatComponent } from './doctor/daystat/daystat.component';
-import { CalendarComponent } from './doctor/calendar/calendar.component';
 import { PatientListComponent } from './doctor/patient-list/patient-list.component';
-import { AddPatientFormComponent } from './doctor/add-patient-form/add-patient-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { CalendarComponent } from './doctor/calendar/calendar.component';
+import { DaystatComponent } from './doctor/daystat/daystat.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PatientsComponent } from './doctor/patients/patients.component';
-import { DataService } from './doctor/DataService';
-import { DossierComponent } from './doctor/dossier/dossier.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {AddPatientFormComponent} from './doctor/add-patient-form/add-patient-form.component';
+import {PatientsComponent} from "./doctor/patients/patients.component";
+import {DossierComponent} from "./doctor/dossier/dossier.component";
+import {DataService} from "./doctor/DataService";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { IndexComponent } from './admin/post/index/index.component';
+import { ViewComponent } from './admin/post/view/view.component';
+import { CreateComponent } from './admin/post/create/create.component';
+import { EditComponent } from './admin/post/edit/edit.component';
+import { PostRoutingModule } from './admin/post/post-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from './doctor/material/material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -42,23 +62,39 @@ import { DossierComponent } from './doctor/dossier/dossier.component';
     InformationComponent,
     AccueilPatientComponent,
     NavbarComponent,
-    DaystatComponent,
-    CalendarComponent,
     PatientListComponent,
+    CalendarComponent,
+    DaystatComponent,
     AddPatientFormComponent,
     PatientsComponent,
-    DossierComponent
+    DossierComponent,
+    IndexComponent, ViewComponent, CreateComponent, EditComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
+    RouterModule.forRoot([]),
     FormsModule,
-    HttpClientModule
+    MatIconModule,
+    MatGridListModule,
+    HttpClientModule,
+    MatCardModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    ReactiveFormsModule, PostRoutingModule,
+    BrowserAnimationsModule,
+        MaterialModule,
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

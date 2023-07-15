@@ -11,26 +11,26 @@ export class DoctorService {
   constructor(private http:HttpClient) { }
 
   getPatients(page:number, size:number):Observable<Array<Patient>>{
-    return this.http.get<Array<Patient>>(`http://localhost:9000/patients?page=${page}&_limit=${size}`);
+    return this.http.get<Array<Patient>>(`http://localhost:3000/patients?page=${page}&_limit=${size}`);
   }
 
   searchPatient(keyword:string){
-    return this.http.get<Array<Patient>>(`http://localhost:9000/patients?firstName_like=${keyword}`);
+    return this.http.get<Array<Patient>>(`http://localhost:3000/patients?firstName_like=${keyword}`);
   }
 
   //ajouter patient
   addPatient(newPatient:Patient){
-    return this.http.post<Patient>('http://localhost:9000/patients', newPatient);
+    return this.http.post<Patient>('http://localhost:3000/patients', newPatient);
   }
 
   //modifier patient
   handlePatient(patient:Patient){
-    return this.http.put<Patient>(`http://localhost:9000/patients/${patient.id}`,patient);
+    return this.http.put<Patient>(`http://localhost:3000/patients/${patient.id}`,patient);
   }
 
   //supprimer patient
   deletePatient(patient:Patient){
-    return this.http.delete<Patient>(`http://localhost:9000/patients/${patient.id}`);
+    return this.http.delete<Patient>(`http://localhost:3000/patients/${patient.id}`);
   }
 
 }
