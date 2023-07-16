@@ -67,3 +67,14 @@ mat-card-content div span:nth-child(1){
   background-image: url('../data/avatar3.png');
   background-size: cover;
 }
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: darkcyan;
+  height: 127px;
+}
+mat-card:hover{
+  transform: translateY(-4px);
+  transition: ease-in-out;
+}

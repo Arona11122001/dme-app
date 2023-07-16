@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Historique des visites médicales</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="visites">
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let visite">{{ visite.date }}</td>
+        </ng-container>
+        <ng-container matColumnDef="raison">
+          <th mat-header-cell *matHeaderCellDef>Raison</th>
+          <td mat-cell *matCellDef="let visite"><span class="info">{{ visite.motif }}</span></td>
+        </ng-container>
+        <ng-container matColumnDef="diagnostic">
+          <th mat-header-cell *matHeaderCellDef>Diagnostic</th>
+          <td mat-cell *matCellDef="let visite"><span class="donnee">{{ visite.observations }}</span></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="['date', 'raison', 'diagnostic']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['date', 'raison', 'diagnostic']"></tr>
+      </table>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary">AJOUTER</button>
+      <button mat-raised-button routerLink="/dossier-medical">RETOUR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

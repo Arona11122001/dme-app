@@ -20,7 +20,7 @@ export class PatientsComponent implements OnInit{
   }
 
   getPatients():void{
-    this.doctorService.getPatients(1, 9).subscribe({
+    this.doctorService.getPatients(1, 100).subscribe({
       next: data => {
         this.patients = data
       },

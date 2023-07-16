@@ -58,6 +58,14 @@ export class AddPatientFormComponent implements OnInit {
 
     onSubmit(): void {
         this.addPatient(this.newPatient.value);
+        alert(`${this.newPatient.value.firstName} ${this.newPatient.value.lastName} a ete ajoute avec succes`);
+        this.newPatient.value.firstName = '';
+      this.newPatient.value.lasttName = '';
+      this.newPatient.value.dateOfBirth = ''
+      this.newPatient.value.sexe = '';
+      this.newPatient.value.telephone = '';
+      this.newPatient.value.mail = '';
+
         //console.log(this.newPatient.value)
     }
 

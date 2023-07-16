@@ -1,0 +1,39 @@
+<!--<mat-card>-->
+<!--  <mat-card-header>-->
+<!--    <mat-card-title>-->
+<!--      Informations Personelles-->
+<!--    </mat-card-title>-->
+<!--  </mat-card-header>-->
+<!--  <mat-card-content>-->
+<!--    <h2>Prenom</h2>-->
+<!--    <h3></h3>-->
+<!--    <h2>Nom</h2>-->
+<!--    <h3></h3>-->
+<!--    <h2>Age</h2>-->
+<!--    <h3></h3>-->
+
+<!--  </mat-card-content>-->
+<!--  <mat-card-actions>-->
+<!--    <button mat-raised-button color="primary">MODIFIER</button>-->
+<!--    <button mat-raised-button color="warn">SUPPRIMER</button>-->
+<!--  </mat-card-actions>-->
+<!--</mat-card>-->
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Informations personnelles</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><span class="info">Nom complet</span>: <span class="donnee">{{ client.nom }}</span></p>
+      <p><span class="info">Date de naissance</span>: <span class="donnee">{{ client.dateOfBirth }}</span></p>
+      <p><span class="info">Sexe</span>: <span class="donnee">{{ client.sexe }}</span></p>
+      <p><span class="info">Adresse</span>: <span class="donnee">{{ client.adresse }}</span></p>
+      <p><span class="info">Numéro de téléphone</span>: <span class="donnee">{{ client.telephone }}</span></p>
+      <p><span class="info">Adresse e-mail</span>: <span class="donnee">{{ client.email }}</span></p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button routerLink="/dossier-medical">RETOUR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

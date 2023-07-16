@@ -22,6 +22,18 @@ import {HttpClientModule} from "@angular/common/http";
 import { PatientsComponent } from './doctor/patients/patients.component';
 import {DataService} from "./doctor/DataService";
 import { DossierComponent } from './doctor/dossier/dossier.component';
+import { InfoPersoComponent } from './doctor/dossier/info-perso/info-perso.component';
+import { NotesObservationComponent } from './doctor/dossier/notes-observation/notes-observation.component';
+import { PrescriptionComponent } from './doctor/dossier/prescription/prescription.component';
+import { ResultatsComponent } from './doctor/dossier/resultats/resultats.component';
+import { HistoriqueComponent } from './doctor/dossier/historique/historique.component';
+import { ResumeComponent } from './doctor/dossier/resume/resume.component';
+// import { InfoPersoComponent } from './app/doctor/dossier/info-perso/info-perso.component';
+// import { ResumeComponent } from './app/doctor/dossier/resume/resume.component';
+// import { HistoriqueComponent } from './app/doctor/dossier/historique/historique.component';
+// import { ResultatsComponent } from './app/doctor/dossier/resultats/resultats.component';
+// import { PrescriptionComponent } from './app/doctor/dossier/prescription/prescription.component';
+// import { NotesObservationComponent } from './app/doctor/dossier/notes-observation/notes-observation.component';
 
 
 @NgModule({
@@ -39,7 +51,14 @@ import { DossierComponent } from './doctor/dossier/dossier.component';
         PatientListComponent,
         AddPatientFormComponent,
         PatientsComponent,
-        DossierComponent
+        DossierComponent,
+        InfoPersoComponent,
+        NotesObservationComponent,
+        PrescriptionComponent,
+        ResultatsComponent,
+        HistoriqueComponent,
+        ResumeComponent,
+
     ],
     imports: [
         BrowserModule,

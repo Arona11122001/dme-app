@@ -1,0 +1,22 @@
+mat-card{
+  width: 500px;
+}
+
+.info{
+  font-weight: 500;
+  font-size: 16px ;
+}
+.donnee{
+  font-weight: 500;
+  font-size: 16px;
+  color: darkcyan;
+}
+.container{
+  width: 100%;
+  height: 96%;
+  background-color: #b9dcea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}

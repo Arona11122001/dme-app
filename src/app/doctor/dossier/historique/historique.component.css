@@ -1,0 +1,9 @@
+.container{
+  display: flex;
+  justify-content: center;
+  background-color: #b9dcea;
+  height: 100%;
+}
+mat-card{
+  height: max-content;
+}
