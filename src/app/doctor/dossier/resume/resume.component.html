@@ -1,0 +1,77 @@
+<div >
+  <mat-card *ngIf="resume">
+    <mat-card-header>
+      <mat-card-title>Résumé du dossier médical</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="resume">
+      <p>
+        <span class="info">Conditions médicales principales: </span>
+        <span class="donnee">{{ resume?.conditionsMedicales }}</span>
+      </p>
+      <p>
+        <span class="info">Allergies connues: </span>
+        <span class="donnee">{{  resume?.allergies}}</span>
+      </p>
+      <p>
+        <span class="info">Médicaments prescrits régulièrement: </span>
+        <span class="donnee">{{ resume?.medicaments }}</span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="afficherFormulaireModification=true" >MODIFIER</button>
+      <button mat-raised-button routerLink="/dossier-medical">RETOUR</button>
+    </mat-card-actions>
+
+  </mat-card >
+
+  <mat-card *ngIf="resume && afficherFormulaireModification">
+    <mat-card-content>
+      <form >
+        <mat-form-field>
+          <mat-label>Conditions Medicales</mat-label>
+          <input matInput value="{{resume.conditionsMedicales}}" [(ngModel)]="resume.conditionsMedicales" name="conditionsMedicales"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Allergies</mat-label>
+          <input matInput value="{{resume.allergies}}" [(ngModel)]="resume.allergies" name="allergies"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Medicaments</mat-label>
+          <input matInput value="{{resume.medicaments}}" [(ngModel)]="resume.medicaments" name="medicaments"/>
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button (click)="handleResume(resume)" >VALIDER</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="!resume">
+    <mat-card-header>
+      <mat-card-title>
+        Ajouter Resume Medical
+      </mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="newResume">
+        <mat-form-field>
+          <mat-label>Conditions Medicales</mat-label>
+          <input matInput formControlName="conditionsMedicales"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Allergies</mat-label>
+          <input matInput formControlName="allergies"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Medicaments</mat-label>
+          <input matInput formControlName="medicaments"/>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit" (click)="onSubmit()" [disabled]= "newResume.invalid">Ajouter Resume</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

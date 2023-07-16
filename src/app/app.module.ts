@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DoctorComponent } from './doctor/doctor.component';
@@ -45,19 +43,44 @@ import { EditComponent } from './admin/post/edit/edit.component';
 import { PostRoutingModule } from './admin/post/post-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './doctor/material/material.module';
-
+import { DossierComponent } from './doctor/dossier/dossier.component';
+import { InfoPersoComponent } from './doctor/dossier/info-perso/info-perso.component';
+import { NotesObservationComponent } from './doctor/dossier/notes-observation/notes-observation.component';
+import { PrescriptionComponent } from './doctor/dossier/prescription/prescription.component';
+import { ResultatsComponent } from './doctor/dossier/resultats/resultats.component';
+import { HistoriqueComponent } from './doctor/dossier/historique/historique.component';
+import { ResumeComponent } from './doctor/dossier/resume/resume.component';
+// import { InfoPersoComponent } from './app/doctor/dossier/info-perso/info-perso.component';
+// import { ResumeComponent } from './app/doctor/dossier/resume/resume.component';
+// import { HistoriqueComponent } from './app/doctor/dossier/historique/historique.component';
+// import { ResultatsComponent } from './app/doctor/dossier/resultats/resultats.component';
+// import { PrescriptionComponent } from './app/doctor/dossier/prescription/prescription.component';
+// import { NotesObservationComponent } from './app/doctor/dossier/notes-observation/notes-observation.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DoctorComponent,
-    PatientComponent,
-    SecretaireComponent,
-    GestionnaireComponent,
-    AdminComponent,
-    AccueilComponent,
-    MedicalRecordComponent,
+    declarations: [
+        AppComponent,
+        DoctorComponent,
+        PatientComponent,
+        SecretaireComponent,
+        GestionnaireComponent,
+        AdminComponent,
+        AccueilComponent,
+        NavbarComponent,
+        DaystatComponent,
+        CalendarComponent,
+        PatientListComponent,
+        AddPatientFormComponent,
+        PatientsComponent,
+        DossierComponent,
+        InfoPersoComponent,
+        NotesObservationComponent,
+        PrescriptionComponent,
+        ResultatsComponent,
+        HistoriqueComponent,
+        ResumeComponent,
+        MedicalRecordComponent,
     PaymentComponent,
     InformationComponent,
     AccueilPatientComponent,
@@ -69,9 +92,9 @@ import {MaterialModule} from './doctor/material/material.module';
     PatientsComponent,
     DossierComponent,
     IndexComponent, ViewComponent, CreateComponent, EditComponent
-    
-  ],
-  imports: [
+
+    ],
+     imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
@@ -92,9 +115,16 @@ import {MaterialModule} from './doctor/material/material.module';
     MatExpansionModule,
     ReactiveFormsModule, PostRoutingModule,
     BrowserAnimationsModule,
-        MaterialModule,
+    BrowserModule,
+    AppRoutingModule, BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
+
+
+
+
+
 })
 export class AppModule {}

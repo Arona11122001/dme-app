@@ -1,0 +1,14 @@
+div{
+  padding-top: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 97%;
+  background-color: #b9dcea;
+}
+mat-card{
+  width: 50%;
+  height: max-content;
+
+}
