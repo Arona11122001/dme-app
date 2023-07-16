@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Effectuer un paiement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #428bca;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #666;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .error-message,
+    .success-message {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    .success-message {
+      color: green;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      background-color: #428bca;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="title">Effectuer un paiement</h2>
+    <div class="form-group">
+      <label for="paymentMethod">Mode de paiement :</label>
+      <select [(ngModel)]="selectedPaymentMethod" name="paymentMethod">
+        <option value="wave">Wave</option>
+        <option value="om">OM</option>
+        <option value="carte">Carte bancaire</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="amount">Montant du paiement :</label>
+      <input [(ngModel)]="amount" type="text" name="amount" placeholder="Montant du paiement">
+    </div>
+    <div *ngIf="selectedPaymentMethod === 'wave' || selectedPaymentMethod === 'om'">
+      <div class="form-group">
+        <label for="phoneNumber">Numéro de téléphone :</label>
+        <input [(ngModel)]="phoneNumber" type="text" name="phoneNumber" placeholder="Numéro de téléphone">
+      </div>
+      <div class="form-group">
+        <label for="secretCode">Code secret :</label>
+        <input [(ngModel)]="secretCode" type="password" name="secretCode" placeholder="Code secret">
+      </div>
+    </div>
+    <div *ngIf="selectedPaymentMethod === 'carte'">
+      <div class="form-group">
+        <label for="cardNumber">Numéro de carte :</label>
+        <input [(ngModel)]="cardNumber" type="text" name="cardNumber" placeholder="Numéro de carte bancaire">
+      </div>
+      <div class="form-group">
+        <label for="cardHolderName">Nom du titulaire de la carte :</label>
+        <input [(ngModel)]="cardHolderName" type="text" name="cardHolderName" placeholder="Nom du titulaire de la carte">
+      </div>
+      <div class="form-group">
+        <label for="expirationDate">Date d'expiration :</label>
+        <input [(ngModel)]="expirationDate" type="text" name="expirationDate" placeholder="MM/AA">
+      </div>
+      <div class="form-group">
+        <label for="cvv">Code de sécurité (CVV) :</label>
+        <input [(ngModel)]="cvv" type="text" name="cvv" placeholder="Code de sécurité">
+      </div>
+      <div class="form-group">
+        <label for="bank">Banque :</label>
+        <input [(ngModel)]="bank" type="text" name="bank" placeholder="Nom de la banque">
+      </div>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div class="button-container">
+      <button (click)="submitPayment()">Effectuer le paiement</button>
+    </div>
+  </div>
+</body>
+
+</html>

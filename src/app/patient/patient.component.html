@@ -1,1 +1,78 @@
-<p>patient works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authentification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      max-width: 500px;
+      margin:  0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    
+    }
+   
+    
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      width: 95%;
+      padding: 10px;
+      background-color: #0c10e4;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #0c10e4;
+    }
+  </style>
+</head>
+<body >
+  <div class="container">
+    <h2>Authentification</h2>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Se connecter</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

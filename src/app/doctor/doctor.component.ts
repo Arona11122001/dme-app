@@ -4,6 +4,7 @@ import {Patient} from "./patient";
 import {DataService} from "./DataService";
 import {DoctorService} from "./services/doctor.service";
 
+
 @Component({
     selector: 'app-doctor',
     templateUrl: './doctor.component.html',

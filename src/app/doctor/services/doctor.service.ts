@@ -21,6 +21,7 @@ export class DoctorService {
     return this.http.get<Array<Patient>>(`${this.url}/patients?firstName_like=${keyword}`);
   }
 
+
   //ajouter patient
   addPatient(newPatient:Patient){
     return this.http.post<Patient>(`${this.url}/patients`, newPatient);
@@ -46,5 +47,4 @@ export class DoctorService {
   handleResume(resume:Resume){
     return this.http.put<Resume>(`${this.url}/resume/${resume.id}`, resume);
   }
-
 }

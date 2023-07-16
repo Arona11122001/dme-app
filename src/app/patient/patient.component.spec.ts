@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+
+
+
+
 import { PatientComponent } from './patient.component';
 
 describe('PatientComponent', () => {
@@ -18,6 +22,7 @@ describe('PatientComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Utilisez toBeTruthy() pour effectuer la vérification
   });
-});
+  
+})

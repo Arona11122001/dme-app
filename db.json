@@ -1,0 +1,178 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "identifiant": "user4",
+      "motDePasse": "password4",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 6,
+      "identifiant": "user6",
+      "motDePasse": "password6",
+      "typeUser": "patient"
+    },
+    {
+      "id": 7,
+      "identifiant": "user7",
+      "motDePasse": "password7",
+      "typeUser": "gestionnaire"
+    },
+    {
+      "id": 8,
+      "identifiant": "user8",
+      "motDePasse": "password8",
+      "typeUser": "secretaire"
+    },
+    {
+      "identifiant": "ronaldo",
+      "motDePasse": "password9",
+      "typeUser": "patient",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "identifiant": "user10",
+      "motDePasse": "password10",
+      "typeUser": "patient"
+    },
+    {
+      "id": 11,
+      "identifiant": "user11",
+      "motDePasse": "password11",
+      "typeUser": "gestionnaire"
+    },
+    {
+      "id": 12,
+      "identifiant": "user12",
+      "motDePasse": "password12",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 13,
+      "identifiant": "user13",
+      "motDePasse": "password13",
+      "typeUser": "medecin"
+    },
+    {
+      "id": 14,
+      "identifiant": "user14",
+      "motDePasse": "password14",
+      "typeUser": "patient"
+    },
+    {
+      "id": 15,
+      "identifiant": "user15",
+      "motDePasse": "password15",
+      "typeUser": "gestionnaire"
+    },
+    {
+      "id": 16,
+      "identifiant": "user16",
+      "motDePasse": "password16",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 17,
+      "identifiant": "user17",
+      "motDePasse": "password17",
+      "typeUser": "medecin"
+    },
+    {
+      "id": 18,
+      "identifiant": "user18",
+      "motDePasse": "password18",
+      "typeUser": "patient"
+    },
+    {
+      "id": 19,
+      "identifiant": "user19",
+      "motDePasse": "password19",
+      "typeUser": "gestionnaire"
+    },
+    {
+      "id": 20,
+      "identifiant": "user20",
+      "motDePasse": "password20",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 21,
+      "identifiant": "user21",
+      "motDePasse": "password21",
+      "typeUser": "medecin"
+    },
+    {
+      "id": 22,
+      "identifiant": "user22",
+      "motDePasse": "password22",
+      "typeUser": "patient"
+    },
+    {
+      "id": 23,
+      "identifiant": "user23",
+      "motDePasse": "password23",
+      "typeUser": "gestionnaire"
+    },
+    {
+      "id": 24,
+      "identifiant": "user24",
+      "motDePasse": "password24",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 25,
+      "identifiant": "user25",
+      "motDePasse": "password25",
+      "typeUser": "medecin"
+    },
+    {
+      "id": 26,
+      "identifiant": "user26",
+      "motDePasse": "password26",
+      "typeUser": "patient"
+    },
+    {
+      "identifiant": "saliou niane",
+      "motDePasse": "bayezale",
+      "typeUser": "medecin",
+      "id": 27
+    },
+    {
+      "id": 28,
+      "identifiant": "user28",
+      "motDePasse": "password28",
+      "typeUser": "secretaire"
+    },
+    {
+      "id": 30,
+      "identifiant": "user30",
+      "motDePasse": "password30",
+      "typeUser": "patient"
+    },
+    {
+      "identifiant": "Arona",
+      "motDePasse": "jr123",
+      "typeUser": "patient",
+      "id": 32
+    },
+    {
+      "identifiant": "Arona",
+      "motDePasse": "passer",
+      "typeUser": "patient",
+      "id": 33
+    },
+    {
+      "identifiant": "mayweather",
+      "motDePasse": "passer",
+      "typeUser": "gestionnaire",
+      "id": 34
+    },
+    {
+      "identifiant": "Arona",
+      "motDePasse": "lfjv",
+      "typeUser": "medecin",
+      "id": 35
+    }
+  ]
+}
